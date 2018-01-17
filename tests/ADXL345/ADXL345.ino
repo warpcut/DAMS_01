@@ -1,3 +1,10 @@
+/*
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
+ * 
+ */
+ 
 #include <Wire.h>
  
 const int DEVICE_ADDRESS = (0x53);  

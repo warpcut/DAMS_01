@@ -1,4 +1,7 @@
 /*
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
  *  
  *          Analog pin 1
  *             |

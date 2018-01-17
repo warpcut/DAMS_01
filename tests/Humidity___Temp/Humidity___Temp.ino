@@ -1,3 +1,10 @@
+/*
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
+ * 
+ */
+
 #include <dht.h>
 
 dht DHT;

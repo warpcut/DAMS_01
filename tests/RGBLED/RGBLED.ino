@@ -1,8 +1,8 @@
 /*
- *  Test LedRGB
- *  red - 8
- *  blue - 9
- *  green - 10
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
+ * 
  */
  
 const int GREEN = 10;  

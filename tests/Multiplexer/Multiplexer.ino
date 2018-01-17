@@ -1,5 +1,8 @@
 /*
- *  Multiplexer test
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
+ * 
  */
 
 const int totChannels = 16;

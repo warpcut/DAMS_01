@@ -1,6 +1,10 @@
 /*
- *  Joystik test 
+ * 
+ * Copyright 2018 Marco Colussi
+ * This file is part of DAMS_01.
+ * 
  */
+ 
 const int SW_pin = 11; // digital pin connected to switch output
 const int X_pin = 2; // analog pin connected to X output
 const int Y_pin = 3; // analog pin connected to Y output
