@@ -3,6 +3,8 @@ DAMS_01 is a digital synthesizer developed in PureData.
 The aim of this project is to create a working synthesizer for live performances wich could be modified every time to create new sounds for different situations.
 Its main feature is that it uses the surrounding environment to controll some parameter of the synthesis.
 
+![DAMS_01](DAMS_01.jpg)
+
 ## Components
 * Raspberry PI3: this will be used for running PureData and comunicating with the arduino.;
 * Arduino UNO: used to analize and elaborate the data provided by the sensors and send it to the PD patch;
