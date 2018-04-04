@@ -938,7 +938,7 @@ void loop()
               Firmata.sendAnalog(analogPin, map(DHT.temperature,0, 50, 0, 1023));
               break;
             case 14:
-              Firmata.sendAnalog(analogPin, map(DHT.humidity, 20, 90, 0, 1023));
+              Firmata.sendAnalog(analogPin, map(DHT.humidity, 40, 90, 0, 1023));
               break;
             case 15:
               if(ctsValue == LOW){

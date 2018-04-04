@@ -1,4 +1,4 @@
-#N canvas 130 175 928 582 10;
+#N canvas 130 128 928 582 10;
 #X obj 448 279 cnv 15 200 200 empty empty Granulator 20 -10 1 14 -4034
 -66577 0;
 #X obj 13 279 cnv 50 400 200 empty empty Master 20 -10 1 14 -258113
@@ -94,8 +94,8 @@
 #X restore 171 234 pd master;
 #X obj 11 21 r~ toMF;
 #X obj 11 38 r~ toM;
-#X obj 253 262 knob 32 32 0 1 0 0 empty empty Master 0 -8 0 8 -233017
--166441 -262144 2918 1;
+#X obj 253 262 knob 32 32 0 1 0 0 empty empty Master 0 -8 0 8 4.60246e+06
+1 4.6025e+06 0 1;
 #X obj 304 120 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
 #N canvas 0 50 152 114 VU 0;
 #X obj 40 38 env~;
@@ -115,7 +115,7 @@
 #X text 218 145 wet;
 #X text 159 195 roomsize;
 #X msg 360 147 \; pd dsp \$1;
-#X obj 162 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 162 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 153 108 on/off;
 #X obj 254 120 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
@@ -162,7 +162,7 @@
 #N canvas 110 157 1191 641 grain 0;
 #X obj 917 46 openpanel;
 #X obj 907 118 soundfiler;
-#X floatatom 907 139 5 0 0 0 - - -;
+#X floatatom 907 139 5 0 0 0 - - -, f 5;
 #X obj 907 162 s fileSize;
 #N canvas 0 50 450 278 (subpatch) 0;
 #X array audio_file 105476 float 2;
@@ -195,8 +195,8 @@
 #X obj 57 214 r fileSize;
 #X obj 57 255 -;
 #X obj 72 234 r maxLength;
-#X floatatom 42 298 12 0 0 0 - - -;
-#X floatatom 224 257 12 0 0 0 - - -;
+#X floatatom 42 298 12 0 0 0 - - -, f 12;
+#X floatatom 224 257 12 0 0 0 - - -, f 12;
 #X obj 227 408 line~;
 #X obj 227 386 pack 0 0;
 #X obj 406 216 / 44.1;
@@ -217,8 +217,8 @@
 -1 -1 0 1;
 #X obj 416 113 swap 1;
 #X obj 416 135 /;
-#X floatatom 416 157 5 0 0 0 - - -;
-#X floatatom 415 92 5 0 0 0 - - -;
+#X floatatom 416 157 5 0 0 0 - - -, f 5;
+#X floatatom 415 92 5 0 0 0 - - -, f 5;
 #X obj 855 357 s startIDX_1;
 #X obj 42 29 r startIDX_1;
 #X obj 27 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -255,7 +255,7 @@
 #N canvas 737 142 450 300 minNrange 0;
 #X obj 181 117 random 1000;
 #X obj 181 138 / 1000;
-#X floatatom 181 220 5 0 0 0 - - -;
+#X floatatom 181 220 5 0 0 0 - - -, f 5;
 #X obj 181 93 inlet;
 #X text 180 72 bang;
 #X text 204 163 range;
@@ -279,7 +279,7 @@
 #N canvas 737 142 450 300 minNrange 0;
 #X obj 181 117 random 1000;
 #X obj 181 138 / 1000;
-#X floatatom 181 220 5 0 0 0 - - -;
+#X floatatom 181 220 5 0 0 0 - - -, f 5;
 #X obj 181 93 inlet;
 #X text 180 72 bang;
 #X obj 181 162 * 1;
@@ -303,7 +303,7 @@
 #N canvas 737 142 450 300 minNrange 0;
 #X obj 181 117 random 1000;
 #X obj 181 138 / 1000;
-#X floatatom 181 220 5 0 0 0 - - -;
+#X floatatom 181 220 5 0 0 0 - - -, f 5;
 #X obj 181 93 inlet;
 #X text 180 72 bang;
 #X obj 181 162 * 1;
@@ -327,7 +327,7 @@
 #N canvas 737 142 450 300 minNrange 0;
 #X obj 181 117 random 1000;
 #X obj 181 138 / 1000;
-#X floatatom 181 220 5 0 0 0 - - -;
+#X floatatom 181 220 5 0 0 0 - - -, f 5;
 #X obj 181 93 inlet;
 #X text 180 72 bang;
 #X obj 181 162 * 1;
@@ -478,18 +478,20 @@
 #X obj 391 97 metro 100;
 #X obj 391 121 random 10;
 #X obj 391 145 / 10;
-#X floatatom 391 166 5 0 0 0 - - -;
+#X floatatom 391 166 5 0 0 0 - - -, f 5;
 #X obj 372 -5 r metronome;
 #X obj 100 345 s~ granL;
 #X obj 212 341 s~ granR;
 #X obj 367 62 /;
 #X obj 428 28 r gran;
-#X floatatom 526 95 5 0 0 0 - - -;
-#X floatatom 319 81 5 0 0 0 - - -;
-#X floatatom 332 17 5 0 0 0 - - -;
+#X floatatom 526 95 5 0 0 0 - - -, f 5;
+#X floatatom 319 81 5 0 0 0 - - -, f 5;
+#X floatatom 332 17 5 0 0 0 - - -, f 5;
 #X obj 518 125 metro 100;
-#X obj 526 73 * 2;
 #X obj 127 27 r granOn;
+#X obj 597 32 r A14;
+#X obj 597 54 * 2;
+#X obj 526 73 *;
 #X connect 0 0 4 0;
 #X connect 0 0 4 1;
 #X connect 1 0 0 2;
@@ -506,16 +508,18 @@
 #X connect 10 0 17 0;
 #X connect 13 0 0 1;
 #X connect 13 0 16 0;
-#X connect 14 0 19 0;
+#X connect 14 0 22 0;
 #X connect 15 0 13 1;
 #X connect 15 0 18 0;
 #X connect 18 0 13 0;
-#X connect 19 0 15 0;
-#X connect 20 0 3 0;
+#X connect 19 0 3 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 1;
+#X connect 22 0 15 0;
 #X coords 0 -1 1 1 200 200 1 100 100;
 #X restore 448 280 pd granulator;
 #N canvas 156 303 450 300 filter 0;
-#X floatatom 196 203 5 0 0 0 - - -;
+#X floatatom 196 203 5 0 0 0 - - -, f 5;
 #N canvas 400 108 450 300 vcFilter 0;
 #X obj 56 95 r~ toF;
 #X obj 56 240 s~ toMF;
@@ -532,17 +536,17 @@
 #X obj 115 150 vsl 30 50 100 3000 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X text 203 179 q;
-#X floatatom 187 135 5 0 0 0 - - -;
+#X floatatom 187 135 5 0 0 0 - - -, f 5;
 #X text 177 109 Frequency;
 #X obj 125 112 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 124 45 metro 100;
 #X obj 140 14 r metronome;
 #X obj 127 68 random 2000;
-#X obj 271 163 r A13;
 #X obj 271 186 * 10;
 #X obj 313 38 r filterOn;
 #X obj 44 64 loadbang;
+#X obj 271 163 r A14;
 #X connect 0 0 1 1;
 #X connect 2 0 1 0;
 #X connect 4 0 2 0;
@@ -550,10 +554,10 @@
 #X connect 7 0 9 0;
 #X connect 8 0 7 1;
 #X connect 9 0 4 0;
-#X connect 10 0 11 0;
-#X connect 11 0 0 0;
-#X connect 12 0 6 0;
-#X connect 13 0 4 0;
+#X connect 10 0 0 0;
+#X connect 11 0 6 0;
+#X connect 12 0 4 0;
+#X connect 13 0 10 0;
 #X coords 0 -1 1 1 150 150 1 100 100;
 #X restore 375 40 pd filter;
 #N canvas 822 98 450 294 osc2 0;
@@ -588,7 +592,7 @@
 #X connect 13 0 2 0;
 #X connect 14 0 3 0;
 #X restore 20 228 pd demux;
-#X floatatom 168 272 5 0 0 0 - - -;
+#X floatatom 168 272 5 0 0 0 - - -, f 5;
 #N canvas 0 116 177 67 vol 0;
 #X obj 45 71 *~;
 #X obj 100 54 line~;
@@ -605,7 +609,7 @@
 #X connect 6 0 1 0;
 #X connect 7 0 6 0;
 #X restore 4 137 pd vol;
-#X floatatom 158 139 5 0 0 0 - - -;
+#X floatatom 158 139 5 0 0 0 - - -, f 5;
 #X msg 298 188 1;
 #X text 139 209 to FControll;
 #X text 157 114 freq;
@@ -683,8 +687,8 @@
 #X text 150 163 to Main;
 #X obj 209 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 166 10 5 0 0 0 - - -;
-#X floatatom 66 104 5 0 0 0 - - -;
+#X floatatom 166 10 5 0 0 0 - - -, f 5;
+#X floatatom 66 104 5 0 0 0 - - -, f 5;
 #X obj 20 101 * 0.3;
 #X connect 0 0 3 0;
 #X connect 1 0 12 0;
@@ -721,15 +725,15 @@
 #X connect 30 0 21 1;
 #X coords 0 -1 1 1 150 150 1 100 100;
 #X restore 189 40 pd osc2;
-#N canvas 686 113 927 635 osc1 1;
-#X obj 107 211 knob 32 32 0 0.8 0 0 empty empty empty 0 -8 0 8 -233017
--166441 -262144 508 1;
-#X floatatom 126 122 5 0 0 0 - - -;
-#X floatatom 129 161 5 0 0 0 - - -;
+#N canvas 353 75 927 635 osc1 0;
+#X obj 107 211 knob 32 32 0 0.8 0 0 empty empty empty 0 -8 0 8 4.60246e+06
+1 4.6025e+06 0 1;
+#X floatatom 126 122 5 0 0 0 - - -, f 5;
+#X floatatom 129 161 5 0 0 0 - - -, f 5;
 #X obj 127 366 s oscVol;
 #X text 121 141 mod dep;
 #X text 112 105 mod freq;
-#X floatatom 258 298 5 0 0 0 - - -;
+#X floatatom 258 298 5 0 0 0 - - -, f 5;
 #X msg 296 203 1;
 #X obj 203 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -800,9 +804,9 @@
 #X obj 99 81 *~;
 #X obj 31 12 inlet;
 #X obj 37 70 inlet;
-#X floatatom 63 129 5 0 0 0 - - -;
-#X floatatom 37 92 5 0 0 0 - - -;
-#X floatatom 238 33 5 0 0 0 - - -;
+#X floatatom 63 129 5 0 0 0 - - -, f 5;
+#X floatatom 37 92 5 0 0 0 - - -, f 5;
+#X floatatom 238 33 5 0 0 0 - - -, f 5;
 #X text 63 270 voce 1;
 #X obj 56 236 s~ adsrton1;
 #X connect 0 0 1 0;
@@ -934,9 +938,9 @@
 #X obj 99 81 *~;
 #X obj 31 12 inlet;
 #X obj 37 70 inlet;
-#X floatatom 63 129 5 0 0 0 - - -;
-#X floatatom 37 92 5 0 0 0 - - -;
-#X floatatom 238 33 5 0 0 0 - - -;
+#X floatatom 63 129 5 0 0 0 - - -, f 5;
+#X floatatom 37 92 5 0 0 0 - - -, f 5;
+#X floatatom 238 33 5 0 0 0 - - -, f 5;
 #X obj 49 197 s~ adsrton2;
 #X text 57 224 voice 2;
 #X connect 0 0 1 0;
@@ -1020,9 +1024,9 @@
 #X obj 99 81 *~;
 #X obj 31 12 inlet;
 #X obj 37 70 inlet;
-#X floatatom 63 129 5 0 0 0 - - -;
-#X floatatom 37 92 5 0 0 0 - - -;
-#X floatatom 238 33 5 0 0 0 - - -;
+#X floatatom 63 129 5 0 0 0 - - -, f 5;
+#X floatatom 37 92 5 0 0 0 - - -, f 5;
+#X floatatom 238 33 5 0 0 0 - - -, f 5;
 #X obj 56 196 s~ adsrton3;
 #X text 58 224 voice 3;
 #X connect 0 0 1 0;
@@ -1106,9 +1110,9 @@
 #X obj 99 81 *~;
 #X obj 31 12 inlet;
 #X obj 37 70 inlet;
-#X floatatom 63 129 5 0 0 0 - - -;
-#X floatatom 37 92 5 0 0 0 - - -;
-#X floatatom 238 33 5 0 0 0 - - -;
+#X floatatom 63 129 5 0 0 0 - - -, f 5;
+#X floatatom 37 92 5 0 0 0 - - -, f 5;
+#X floatatom 238 33 5 0 0 0 - - -, f 5;
 #X obj 60 187 s~ adsrton4;
 #X text 64 224 voice 4;
 #X connect 0 0 1 0;
@@ -1133,7 +1137,7 @@
 #X connect 15 0 13 1;
 #X connect 15 0 17 0;
 #X restore 502 273 pd oscil;
-#X floatatom 392 137 5 0 0 0 - - -;
+#X floatatom 392 137 5 0 0 0 - - -, f 5;
 #X obj 106 5 r A2;
 #X obj 173 5 r A3;
 #X obj 109 75 * 50;
@@ -1146,7 +1150,7 @@
 #X obj 48 239 outlet;
 #X obj 49 205 *;
 #X obj 69 108 ||;
-#X floatatom 151 44 5 0 0 0 - - -;
+#X floatatom 151 44 5 0 0 0 - - -, f 5;
 #X obj 67 82 < -0.1;
 #X obj 117 82 > 0.1;
 #X connect 1 0 3 0;
@@ -1235,15 +1239,15 @@
 #X connect 4 0 1 0;
 #X coords 0 -1 1 1 300 50 2 100 100;
 #X restore 15 204 pd patcher;
-#N canvas 0 107 1360 738 adsr_ 0;
+#N canvas 0 23 1280 635 adsr_ 0;
 #X obj 160 134 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7002 1;
+-1 -1 0 1;
 #X obj 180 134 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10105 1;
+-1 -1 0 1;
 #X obj 200 134 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 6778 1;
+-1 -1 0 1;
 #X obj 220 134 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12241 1;
+-1 -1 0 1;
 #X obj 455 380 s r;
 #X obj 259 403 s s;
 #X obj 186 402 s d;
@@ -1272,14 +1276,14 @@
 #X connect 18 0 3 0;
 #X coords 0 -1 1 1 200 200 1 100 100;
 #X restore 671 21 pd adsr_;
-#N canvas 50 192 1157 617 arduino_c 0;
+#N canvas 50 93 1157 617 arduino_c 0;
 #X text 11 6 2) Serial connection;
 #X msg 402 207 close;
 #X msg 23 27 devices;
 #X msg 65 128 version;
 #N canvas 224 207 546 358 ver 0;
-#X obj 250 100 cnv 15 100 60 empty \$0-version_cnv 68 65 77 83 95 48 49 46 105 110 111 2 5 
-20 12 0 14 -233017 -66577 0;
+#X obj 250 100 cnv 15 100 60 empty \$0-version_cnv empty 20 12 0 14
+-233017 -66577 0;
 #X obj 23 201 send \$0-version_cnv;
 #X msg 23 176 label \$1;
 #X obj 48 147 symbol;
@@ -1311,7 +1315,7 @@
 #X restore 145 331 pd ver;
 #X text 124 127 <- get protocol version;
 #X msg 396 234 firmware;
-#X floatatom 35 54 5 0 0 0 - - -;
+#X floatatom 35 54 5 0 0 0 - - -, f 5;
 #X text 91 61 listed by the 'device' message above;
 #X text 90 46 enter the number of your serial device;
 #X text 73 52 <-;
@@ -1327,12 +1331,12 @@
 0;
 #X obj 660 190 receive \$0-arduino-out;
 #X text 330 538 <-- COMMAND;
-#X obj 214 471 tgl 15 0 empty empty 2 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 229 471 tgl 15 0 empty empty 3 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 244 471 tgl 15 0 empty empty 4 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 259 471 tgl 15 0 empty empty 5 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 184 471 tgl 15 0 empty empty 0 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 199 471 tgl 15 0 empty empty 1 4 -6 1 10 -233017 -1 -1 1 1;
+#X obj 214 471 tgl 15 0 empty empty 2 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 229 471 tgl 15 0 empty empty 3 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 244 471 tgl 15 0 empty empty 4 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 259 471 tgl 15 0 empty empty 5 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 184 471 tgl 15 0 empty empty 0 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 199 471 tgl 15 0 empty empty 1 4 -6 1 10 -233017 -1 -1 0 1;
 #N canvas 190 217 771 367 analogIns_ 0;
 #X obj 30 12 inlet;
 #X obj 432 270 outlet;
@@ -1409,27 +1413,27 @@
 #X obj 231 562 cnv 15 98 21 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X obj 233 564 send \$0-arduino;
-#X obj 304 471 tgl 15 0 empty empty 8 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 319 471 tgl 15 0 empty empty 9 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 334 471 tgl 15 0 empty empty 10 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 304 471 tgl 15 0 empty empty 8 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 319 471 tgl 15 0 empty empty 9 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 334 471 tgl 15 0 empty empty 10 4 -6 1 10 -233017 -1 -1 0 1
 ;
-#X obj 349 471 tgl 15 0 empty empty 11 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 349 471 tgl 15 0 empty empty 11 4 -6 1 10 -233017 -1 -1 0 1
 ;
-#X obj 274 471 tgl 15 0 empty empty 6 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 289 471 tgl 15 0 empty empty 7 4 -6 1 10 -233017 -1 -1 1 1;
-#X obj 364 471 tgl 15 0 empty empty 12 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 274 471 tgl 15 0 empty empty 6 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 289 471 tgl 15 0 empty empty 7 4 -6 1 10 -233017 -1 -1 0 1;
+#X obj 364 471 tgl 15 0 empty empty 12 4 -6 1 10 -233017 -1 -1 0 1
 ;
-#X obj 379 471 tgl 15 0 empty empty 13 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 379 471 tgl 15 0 empty empty 13 4 -6 1 10 -233017 -1 -1 0 1
 ;
-#X obj 394 471 tgl 15 0 empty empty 14 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 394 471 tgl 15 0 empty empty 14 4 -6 1 10 -233017 -1 -1 0 1
 ;
-#X obj 679 412 tgl 15 0 empty empty 8 4 -6 1 10 -233017 -1 -1 1 1;
+#X obj 679 412 tgl 15 0 empty empty 8 4 -6 1 10 -233017 -1 -1 0 1;
 #X obj 694 412 tgl 15 0 empty empty 9 4 -6 1 10 -233017 -1 -1 0 -1
 ;
 #X obj 709 412 tgl 15 0 empty empty 10 0 -6 1 10 -233017 -1 -1 1 1
 ;
 #X text 645 473 <-- COMMAND;
-#X msg 559 473 digital 8 1;
+#X msg 559 473 digital 10 1;
 #N canvas 101 162 791 311 digital______________________________________
 0;
 #X obj 32 22 inlet;
@@ -1525,7 +1529,7 @@
 #X obj 557 500 cnv 15 98 21 empty empty empty 20 12 0 14 -261234 -66577
 0;
 #X obj 559 502 send \$0-arduino;
-#X obj 562 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 562 325 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 566 361 - 1;
 #X obj 951 123 send \$0-arduino-info;
@@ -1560,7 +1564,7 @@
 #X msg 748 393 1;
 #X obj 541 261 r connected;
 #X obj 567 291 t b;
-#X obj 410 471 tgl 15 0 empty empty 15 4 -6 1 10 -233017 -1 -1 1 1
+#X obj 410 471 tgl 15 0 empty empty 15 4 -6 1 10 -233017 -1 -1 0 1
 ;
 #X obj 931 363 s A15;
 #X obj 676 236 route 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15;
@@ -1609,7 +1613,7 @@
 #X obj 33 120 > 0.21;
 #X obj 174 286 s filterOn;
 #X obj 42 297 s newM;
-#X floatatom 121 303 5 0 0 0 - - -;
+#X floatatom 121 303 5 0 0 0 - - -, f 5;
 #X obj 44 273 counter 0 3;
 #X connect 0 0 20 0;
 #X connect 1 0 2 0;
